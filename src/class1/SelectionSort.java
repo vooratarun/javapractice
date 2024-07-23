@@ -38,6 +38,24 @@ public class SelectionSort {
         }
     }
 
+    public void sortRecurse(int[] array, int i) {
+
+        if(array.length == i){
+            return;
+        }
+        int minIndex = findMinIndex(array, i, array.length);
+        swapTwoIndices(array,i, minIndex);
+        sortRecurse(array,i+1);
+    }
+
+    public void sortReverse(int[] array) {
+        for(int i =0;i < array.length;i++){
+            int maxIndex = findMaxIndex(array, i, array.length);
+            swapTwoIndices(array,i, maxIndex);
+//            printArray(array);
+        }
+    }
+
     public  void printArray(int[] array) {
         System.out.println("The elements of the array are: ");
         for (int i = 0; i < array.length; i++) {
@@ -51,9 +69,12 @@ public class SelectionSort {
      public static void main(String[] args) {
 
         SelectionSort selectionSort = new SelectionSort();
-        int[] array = {4,1,-5,7,0,-20,-50};
-        selectionSort.sort(array);
+        int[] array = {9,   7,   5,     3,    1};
+//        selectionSort.sort(array);
 //        selectionSort.printArray(array);
+//        selectionSort.sortReverse(array);
+//         selectionSort.sortRecurse(array,0);
+//         selectionSort.printArray(array);
 
         for(int i =0; i< array.length;i++) {
 
@@ -66,7 +87,7 @@ public class SelectionSort {
             int temp = array[minIndex];
             array[minIndex]= array[i];
             array[i] = temp;
+            selectionSort.printArray(array);
         }
-//        selectionSort.printArray(array);
     }
 }

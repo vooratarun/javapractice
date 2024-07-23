@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class ArrayPractice {
 
-    public   void printArray(int[] array) {
+    public static   void printArray(int[] array) {
         System.out.println("The elements of the array are: ");
         for (int i = 0; i < array.length; i++) {
             System.out.print(array[i] + " ");
@@ -13,7 +13,7 @@ public class ArrayPractice {
         System.out.println("");
     }
 
-    public int findMin(int[] array) {
+    public int findMinEle(int[] array) {
         int minEle = array[0];
         for(int i =1; i< array.length;i++){
             if(array[i] < minEle) {
@@ -56,6 +56,45 @@ public class ArrayPractice {
         printArray(array);
     }
 
+    static int findElementIndex(int[] arr, int n, int key)
+    {
+        for (int i = 0; i < n; i++)
+            if (arr[i] == key)
+                return i;
+
+        return -1;
+    }
+
+    static int[] insertElementInArray(int[] array, int position, int ele) {
+
+        int[] newArray = new int[array.length + 1];
+        for(int i=0; i < array.length;i++) {
+            if(i == position){
+                newArray[i] = ele;
+            } else {
+                newArray[i] = array[i];
+            }
+        }
+        return newArray;
+
+    }
+
+
+    static int[] deleteElementAtPosition(int[] array, int position ) {
+
+        int[] newArray = new int[array.length-1];
+        int j= 0;
+        for(int i=0; i < array.length;i++) {
+            if(i != position) {
+                newArray[j] = array[i];
+                j++;
+            }
+        }
+        return newArray;
+
+    }
+
+
 
     public static void main(String[] args) {
 
@@ -71,18 +110,27 @@ public class ArrayPractice {
 //        }
 //        Arrays.sort(array); // collection function to sort array
 
-        ArrayPractice arrayPractice = new ArrayPractice();
-        arrayPractice.printArray(new int[]{10,3,4,5});
+//        ArrayPractice arrayPractice = new ArrayPractice();
+//        arrayPractice.printArray(new int[]{10,3,4,5});
+//
+//        int minEle = arrayPractice.findMin(new int[]{-10,3,-4,5});
+//        System.out.println(minEle);
+//
+//        arrayPractice.reverseArray(new int[]{1,2,3,4});
+//        arrayPractice.reverseArraySwap(new int[]{1,2,3,4,5});
+//
+//        int[] arr = {1,2,3,4,5};
+//        arrayPractice.swapIndices(arr,1,4);
+//        arrayPractice.printArray(arr);
 
-        int minEle = arrayPractice.findMin(new int[]{-10,3,-4,5});
-        System.out.println(minEle);
+        int[] array = {1,2,3,4,5};
+        int[] newArray = insertElementInArray(array,0,30);
+        printArray(newArray);
 
-        arrayPractice.reverseArray(new int[]{1,2,3,4});
-        arrayPractice.reverseArraySwap(new int[]{1,2,3,4,5});
+        int[] array2 = {1,2,3,4,5};
 
-        int[] arr = {1,2,3,4,5};
-        arrayPractice.swapIndices(arr,1,4);
-        arrayPractice.printArray(arr);
+        int[] newArray2 = deleteElementAtPosition(array2, 2);
+        printArray(newArray2);
 
     }
 }
