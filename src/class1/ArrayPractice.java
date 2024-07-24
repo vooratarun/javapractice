@@ -127,10 +127,10 @@ public class ArrayPractice {
         int[] newArray = insertElementInArray(array,0,30);
         printArray(newArray);
 
-        int[] array2 = {1,2,3,4,5};
-
-        int[] newArray2 = deleteElementAtPosition(array2, 2);
-        printArray(newArray2);
+//        int[] array2 = {1,2,3,4,5};
+//
+//        int[] newArray2 = deleteElementAtPosition(array2, 2);
+//        printArray(newArray2);
 
     }
 }

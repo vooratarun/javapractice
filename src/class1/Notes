@@ -1,0 +1,242 @@
+Basic Operations on arrays and 3 sorting algorithms
+
+Print given array
+Find given element in array
+Find Minimum number in array
+Find minimumNumber index in array
+Swap two indices in given array
+Print  minimum element in given subarray
+Selection sort
+Reverse the given array
+Insert element at position and return new array
+Delete element at given position and return new array
+
+https://visualgo.net/en/sorting
+
+Find minimum number
+
+
+[10,5,2,20,56]
+
+	Let curMin = arr[0]
+	At i =1 , current min = 10 , ele =5 , 5<10; update cur min = 5
+	At i=2.; 2  <5 , current min = 2;
+	At i =20;  current min = 2
+
+
+[10,5,2,20.56]
+
+Left = 0
+Right = 4
+
+swap(arr, 0,4)    [56,20,2,5,10]
+ swap(arra,1,3) [56,5,2,20,10]
+swap(array,2,2) [56,5,]
+swap(arr,3,1)
+
+
+Selection
+Bubble sort : 8 5 7 3 2
+:
+
+Ist Pass
+=-------------
+8      5  5   5   5
+5      8  7   7  7
+7      7  8   3  3
+3      3  3   8  2
+2      2  2   2  8
+
+
+2nd Pass
+
+5  5  5  5
+7  7  3  3
+3  3  7  2
+2  2  2  7
+8  8  8  8
+
+3rd pass
+
+5   3  3
+3   5  2
+2   2  5
+7   7  7
+8  8   8
+
+
+4th pass
+
+3  2
+2  3
+5  5
+7  7
+8  8
+
+8  5 7 3  2
+5  7 3 2  8
+5 3 2 7  8
+3 2 5 7 8
+2 3 5 7 8
+
+
+9   7  6  4   3
+7  6  4   3  9
+6  4  3  7  9
+4 3 6 7 9
+3 4 6 7 9
+
+
+==================
+
+Push the maximum element to the end of the array by adjacent comparisons
+
+8 5 7 6 3
+5 7 6 3     8
+5 6 3         7   8
+5 3      6    7    8
+3 5   6  7 8
+
+No Of passes required are  n-1 = 4
+
+
+
+
+9 7 4 3 1
+7 4 3 1 9
+4 3 1 7 9
+3 1 4 7 9
+1 3 4 7  9
+
+
+Selection sort
+
+9   7   5     3    1
+
+1    7  5    3     9
+
+1 3   5  7   9
+
+1  3  5   7  9
+
+1 3   5  7  9
+
+
+Bubble sort
+
+8  5  7  6  3
+
+5  7 6  3 8
+5  6  3 7 8
+5 3 6 7  8
+3 5 6 7  8
+
+
+Array =   10,30,-1,40,50
+
+Minele = 10
+-1 < 10 ; update minlelme = -1
+40 < -1 false
+50 < -1 false
+
+Input: -111,2,3,4,10,-20
+
+Result 2,-111,3,4,10,-20
+
+subarray(arr, 0,1)-.  2,-111
+subarraa(3,5)-> 4,10, -20
+
+
+
+8 5 7 3 2
+
+2 3  5  7 8
+
+Selecion sort
+Find the minimum element in given subarray
+Replace it with the first element of subarray
+
+8 5 7 3 2
+2 5 7 3 8  -> 1st pass
+2 3 7 5 8  -> 2nd pass
+2 3 5 7 8  -> 3rd pass
+2 3 5 7 8  -> 4th pass
+
+-11,2,3,4,10,-20
+
+-20,10,4,3,2,-11
+
+Newarray = [ -20,10,4,3,2,-11 ]
+
+  1   2   3  4   5
+
+ 5   2   3  4    1
+
+5  4  3  2  1
+
+Bubble sort
+
+Input :8  5 7 3 2
+Output:  2 3 5 7 8
+
+Bubble sort:  push the maximum element to end of array by comparing the adjacent elements and swapping the elements
+
+
+8  5  7  3    2
+
+5  7 3 2    8   ->  1st iteration
+5  3 2     7 8  -> 2nd iteration
+3   2   5  7   8  -> 3rd iteration
+
+2 3  5  7 8 -> 4th iteration
+
+
+
+10, 20,30,50,60
+
+Insert 100 at position 2
+Output
+ 10,20,100,30,50,60
+
+
+Input: 1, 6, 7  8, 9
+
+Insert 10 at position 3
+
+Output: 1 ,6, 7, 10, 8, 9
+
+Declare new Array
+Copyleft side elements of the given position in the new array
+Add the position element in the new array
+Copy right-side elements in the new array
+
+
+newArray with size 6
+
+1,6,7,10,8,9
+
+
+8   5  7  3  2
+
+5  8
+
+How does insertion sort work?
+
+
+
+Start with the second element (consider the first element as sorted).
+Compare this element with the elements before it.
+Shift all the elements greater than the new element to one position to the right.
+Insert the new element into the correct position.
+Repeat the process for all the remaining elements.
+
+
+[5, 2, 4, 6, 1, 3]
+
+2   5   4  6  1  3
+
+2   4  5  6   1  3
+
+1  2  4  5 6  3
+
+1  2 3  4  5 6
